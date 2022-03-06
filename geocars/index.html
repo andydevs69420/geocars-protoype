@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOCARS</title>
+    <!-- ICON -->
+    <link rel="icon" href="../assets/geocarsapp.png">
+    <!-- third party css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="geocars.css">
+    <!-- third-party js  -->
+    <script src="https://kit.fontawesome.com/0ad786b032.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav id="nav" class="nav-bar">
+        <!-- collapase btn on mobile view -->
+        <button id="collapse-btn" class="collapse-btn">
+            <i class="collapse-icon fa fa-bars"></i>
+        </button>
+        <!-- for geocars icon and label -->
+        <div class="brand-wrapper">
+            <span class="brand-label" role="text">
+                Geocars
+            </span>
+        </div>
+        <!-- for geocars links -->
+        <!-- 
+            status-hide  -> display: none;
+            status-shown -> display: block;
+
+         -->
+        <ul id="collapse-wrapper" class="nav-links-wrapper status-hide">
+            <!--
+            --><li class="nav-link-option">
+                <a href="#home" class="nav-link active-link" onclick="on_collapse()">
+                    <span class="link-label" role="text">Home</span>
+                </a>
+            </li><!--
+            --><li class="nav-link-option">
+                <a href="#about" class="nav-link" onclick="on_collapse()">
+                    <span class="link-label" role="text">About</span>
+                </a>
+            </li><!--
+            --><li class="nav-link-option">
+                <a href="#pricing" class="nav-link" onclick="on_collapse()">
+                    <span class="link-label" role="text">Pricing</span>
+                </a>
+            </li><!--
+            --><li class="nav-link-option">
+                <a href="#contact" class="nav-link" onclick="on_collapse()">
+                    <span class="link-label" role="text">Contact us</span>
+                </a>
+            </li><!--
+            -->
+        </ul>
+    </nav>
+    <!-- tabs -->
+    <div id="home" class="tab">
+        <div class="background" style="background: url('../assets/wallpaperflare.com_wallpaper.jpg');">
+            <div class="wrapper">
+                <div class="wrapper-bg"></div>
+                <div class="wrapper-fg">
+                    <span class="large-title" role="text">
+                        Find the ideal car for you.
+                    </span>
+                    <span class="small-description">
+                        We have more cars for you to choose.
+                    </span>
+                    <a href="#platforms" class="explore-btn">
+                        Explore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="platforms" class="availability">
+        <span class="av-label" role="text">
+            Available for
+        </span>
+        <div class="platforms-container">
+            <!-- TODO: add download links -->
+            <!-- web admin -->
+            <a href="../signin/" class="platform">
+                <i class="platform-icon fa fa-code"></i>
+                <span class="platform-type" role="text">web</span>
+            </a>
+            <!-- android client -->
+            <a href="https://drive.google.com/u/1/uc?export=download&confirm=iIz1&id=1JsKKSSpJd_nqeXWzf7AAqgqoyhzahm-w" target="_blank" class="platform">
+                <i class="platform-icon fa fa-android"></i>
+                <span class="platform-type" role="text">android</span>
+            </a>
+        </div>
+    </div>
+    <div id="about" class="tab">
+        <span class="about-title" role="text">
+            Find the best car for you
+        </span>
+        <p class="about-description">
+            Geocars will help you choose 
+            the right vehicle for your needs. 
+            Our team prioritizes safety for 
+            both companies and their clients 
+            using real-time vehicle 
+            tracking with the help of GPS 
+            technology within Cagayan de Oro City, 
+            Philippines. City of golden friendship.
+        </p>
+    </div>
+    <div id="pricing" class="tab">
+        <span class="pricing-title">
+            Choose the right plan
+        </span>
+        <div class="plan-container">
+            <!-- plan-1 -->
+            <div class="plan">
+                <div class="plan-fg-panel">
+                    <span class="plan-title-wrapper">
+                        <i class="plan-icon fa fa-rocket"></i>
+                        <span class="plan-title">
+                            FREEMIUM
+                        </span>
+                    </span>
+                    <span class="table" role="table">
+                        <!-- feature 0 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">8 hours admin panel</span>
+                            </span>
+                        </span>
+                         <!-- feature 1 -->
+                         <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Dashboard</span>
+                            </span>
+                        </span>
+                        <!-- feature 2 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">limited to 5 car slot</span>
+                            </span>
+                        </span>
+                        <!-- feature 3 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Offline tracking</span>
+                            </span>
+                        </span>
+                      
+                    </span>
+                </div>
+            </div>
+
+            <!-- plan-2 -->
+            <div class="plan">
+                <div class="plan-fg-panel">
+                    <span class="plan-title-wrapper">
+                        <i class="plan-icon fa fa-rocket"></i>
+                        <span class="plan-title">
+                            PRO
+                        </span>
+                    </span>
+                    <span class="table" role="table">
+                        <!-- feature 0 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">18 hours admin panel</span>
+                            </span>
+                        </span>
+                         <!-- feature 1 -->
+                         <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Dashboard</span>
+                            </span>
+                        </span>
+                        <!-- feature 2 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">limited to 8 car slot</span>
+                            </span>
+                        </span>
+                        <!-- feature 3 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Offline tracking</span>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <!-- plan-3 -->
+            <div class="plan">
+                <div class="plan-fg-panel">
+                    <span class="plan-title-wrapper">
+                        <i class="plan-icon fa fa-rocket"></i>
+                        <span class="plan-title">
+                            BUSINESS
+                        </span>
+                    </span>
+                    <span class="table" role="table">
+                        <!-- feature 0 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">24 / 7 admin panel</span>
+                            </span>
+                        </span>
+                         <!-- feature 1 -->
+                         <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Dashboard</span>
+                            </span>
+                        </span>
+                        <!-- feature 2 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Unlimited car slots</span>
+                            </span>
+                        </span>
+                        <!-- feature 3 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Offline tracking</span>
+                            </span>
+                        </span>
+                        <!-- feature 4 -->
+                        <span class="row" role="row">
+                            <span class="column cell-0" role="cell">
+                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                            </span>
+                            <span class="column cell-1" role="cell">
+                                <span class="feature-desc" role="text">Early access to new features</span>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="tab">
+        <span class="contact-title" role="text">
+            Get in touch
+        </span>
+        <div class="contact-form">
+            <div class="content-wrapper">
+                <span class="email-wrapper" role="row">
+                    <i class="input-icon fa fa-envelope"></i>
+                    <input id="input-email" class="email-input" type="email" name="email" autocomplete="off" placeholder="email">
+                </span>
+                <textarea id="input-message" class="message-input" name="message-area" placeholder="message"></textarea>
+                <button class="send-message">
+                    Send message
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="landpage-footer">
+        <div class="social-link-wrapper">
+            <!-- TODO: add links -->
+            <a href="http://github.com/geocars2021" class="social-link fa fa-github"></a>
+            <a href="#" class="social-link fa fa-google"></a>
+            <a href="#" class="social-link fa fa-facebook-official"></a>
+        </div>
+        <span class="copy-rights">
+            &#169; 2020-2022 by Geocars devs. All Rights Reserved.
+        </span>
+    </footer>
+</body>
+<script src="geocars.js"></script>
+</html>
+

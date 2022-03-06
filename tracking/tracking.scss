@@ -1,0 +1,168 @@
+@import '../css/view';
+@import '../css/colors';
+
+@font-face {
+    font-family: noto-sans;
+    src: url('../assets/fonts/NotoSans-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: noto-sans;
+    font-size-adjust: 0.58;
+    box-sizing: border-box;
+}
+
+html {
+    width: auto;
+    height: auto;
+    overflow: hidden auto;
+    scrollbar-width: 0;
+}
+
+html ::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1024px;
+    min-height: 768px;  
+    @include onMediumDevice {
+        min-width: 280px;
+        min-height: 568px;
+    }
+    @include onLargeDevice {
+        min-width: 540px;
+        min-height: 768px;  
+    }
+}
+
+.map-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.message-btn {
+    display: block;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    z-index: 1000000000;
+    color: $app-white-0;
+    background-color: $app-blue-2;
+    box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.2);
+    &:active { 
+        box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.4);
+    }
+}
+
+/************************ message area *****************************/
+
+.message-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000000001;
+    min-width: 1024;
+    min-height: 768px;  
+    @include onMediumDevice {
+        min-width: 280px;
+        min-height: 568px;
+    }
+    @include onLargeDevice{
+        min-width: 540px;
+        min-height: 768px;  
+    }
+}
+
+.close-btn {
+    display: block;
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+    width: 25px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    color: $app-blue-5;
+    background-color: $app-white-0;
+    box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.2);
+    &:active { 
+        box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.4);
+    }
+
+}
+
+.message-panel {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 5px;
+    width: 360px;
+    min-height: 230px;
+    max-height: 260px;
+    border-radius: 2px;
+    background-color: $app-white-0;
+    box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.2);
+    @include onMediumDevice {
+        width: 90%;
+    }
+    @include onLargeDevice {
+        width: 80%;
+    }
+}
+
+
+.message-content {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    min-height: 180px;
+    resize: none;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: $app-bluish-white;
+}
+
+.message-send-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+.btn-send {
+    display: block;
+    width: 90px;
+    height: 80%;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    color: $app-white-0;
+    background-color: $app-blue-2;
+    box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.2);
+    &:active { 
+        box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.4);
+    }
+}
+

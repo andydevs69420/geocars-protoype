@@ -1,0 +1,313 @@
+
+@import '../css/config';
+
+
+// buildint classes
+
+.overflow-ellipsis {
+    display: block;
+    word-wrap: none !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
+
+// end
+
+
+
+.signin-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $primary;
+}
+
+@keyframes center-panel-anim {
+    0% , 25% {
+        top: 50%;
+        left: 100%;
+        transform: translate(100% , -50%);
+        opacity: 0;
+    }
+    25% , 50% {
+        top: 50%;
+        left: 75%;
+        transform: translate(-75%,-50%);
+        opacity: 0.3;
+    }
+    50% , 75% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-35%,-50%);
+        opacity: 0.6;
+    }
+    75% , 100% {
+        top: 50%;
+        left: 45%;
+        transform: translate(-45%,-50%);
+        opacity: 0.8;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 1;
+    }
+}
+
+.center-panel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation: center-panel-anim 0.4s ease-in;
+    animation-fill-mode: forwards;
+    width: 768px;
+    height: 68%;
+    min-height: 522.23px;
+    overflow: hidden;
+    background-color: $secondary;
+    box-shadow: 0px 8px 12px -2px rgba(34, 31, 31, 0.2);
+    @include onMediumDevice {
+        display: block;
+        flex-direction: initial;
+        flex-wrap: initial;
+        justify-content: initial;
+        align-items: initial;
+        position: initial;
+        inset: 0;
+        transform: initial !important;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.form-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: $app-white-0;
+    @include onMediumDevice {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        background-color: initial;
+    }
+}
+
+
+.signin-title {
+    display: block;
+    width: 85%;
+    font-size: 50px;
+    font-weight: bold;
+    color: $app-black-0;
+    @include onMediumDevice {
+        width: 85%;
+        text-align: left;
+        color: $app-white-0;
+    }
+}
+
+.input-button-group {
+    display: block;
+    width: 85%;
+    // background-color: yellow;
+}
+
+.input-group {
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    @include onMediumDevice {
+        margin: 20px 0;
+    }
+}
+
+.input-group > .input-label {
+    display: block;
+    margin: 3px 0;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-black-1;
+    @include onMediumDevice {
+        display: none;
+    }
+}
+
+.input-group > .icon-input-group {
+    display: block;
+    position: relative;
+    margin: 3px 0;
+    width: 100%;
+}
+
+.icon-input-group > .input-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    width: 38px;
+    height: 38px;
+    color: $app-gray-0;
+}
+
+.icon-input-group > .input-field {
+    display: block;
+    padding: 0 5px 0 38px;
+    width: 100%;
+    height: 38px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: $app-bluish-white;
+    &:focus {
+        border: 1px solid $app-blue-0;
+    }
+    @include onMediumDevice {
+        border: none;
+        border-radius: initial;
+        color: $app-white-0;
+        border-bottom: 1px solid $app-black-3;
+        background-color: transparent;
+        &:focus {
+            border: none !important;
+            border-bottom: 2px solid $app-blue-0 !important;
+        }
+    }
+}
+
+.icon-input-group > .input-validator-label {
+    display: block;
+    margin: 3px 0;
+    width: 100%;
+    font-size: 12px;
+    color: $app-red-0;  
+    @include onMediumDevice {
+        font-weight: bold;
+    }
+}
+
+.signin-submit {
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    height: 38px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-white-0;
+    background-color: $app-green-1;
+    box-shadow: 0px 5px 8px -2px rgba(34, 31, 31, 0.2);
+    &:active {
+        box-shadow: 0px 8px 10px -2px rgba(34, 31, 31, 0.2);
+    }
+    @include onMediumDevice {
+        margin: 20px 0;
+        border-radius: 100px;
+    }
+}
+
+.forgot-password-group {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.forgot-password-group > .forgot-password-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: $app-blue-1;
+    &:hover {
+        text-decoration: underline;
+    }
+    @include onMediumDevice {
+        color: $app-green-0;
+    }
+}
+
+
+.divider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.divider > .divider-label{
+    font-size: 15px;
+    color: $app-black-1; 
+    @include onMediumDevice {
+        color:  $app-white-0;
+    }   
+}
+
+.divider > .divider-separator {
+    width: 45%;
+    @include onMediumDevice {
+        padding-top: 1px !important;
+        outline: none;
+        border: none;
+        background-color: $app-white-0;
+    }
+}
+
+.signup-link {
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: $app-blue-1;
+    &:hover {
+        text-decoration: underline;
+    }
+    @include onMediumDevice {
+        color: $app-green-0;
+    }
+}
+
+.background-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    @include onMediumDevice {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        z-index: 0;
+    }
+}
+
+.background-message {
+    width: 90%;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: $app-white-0;
+    @include onMediumDevice {
+        display: none;
+    }
+}

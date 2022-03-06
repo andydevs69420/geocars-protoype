@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  width: auto;
+  height: auto;
+  overflow: hidden auto;
+  scrollbar-width: 0;
+}
+
+html ::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1024px;
+  min-height: 768px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 540px) {
+  body {
+    min-width: 280px;
+    min-height: 568px;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 768px) {
+  body {
+    min-width: 540px;
+    min-height: 768px;
+  }
+}
+
+.map-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.message-btn {
+  display: block;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 45px;
+  height: 45px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  z-index: 1000000000;
+  color: #FFFFFF;
+  background-color: #2196f3;
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.message-btn:active {
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+/************************ message area *****************************/
+.message-overlay {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000001;
+  min-width: 1024;
+  min-height: 768px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 540px) {
+  .message-overlay {
+    min-width: 280px;
+    min-height: 568px;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 768px) {
+  .message-overlay {
+    min-width: 540px;
+    min-height: 768px;
+  }
+}
+
+.close-btn {
+  display: block;
+  position: absolute;
+  top: -12.5px;
+  right: -12.5px;
+  width: 25px;
+  height: 25px;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  color: #7C41F5;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:active {
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
+.message-panel {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 5px;
+  width: 360px;
+  min-height: 230px;
+  max-height: 260px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 0px) and (max-width: 540px) {
+  .message-panel {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 768px) {
+  .message-panel {
+    width: 80%;
+  }
+}
+
+.message-content {
+  display: block;
+  padding: 5px;
+  width: 100%;
+  min-height: 180px;
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #E8F0FE;
+}
+
+.message-send-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 40px;
+}
+
+.btn-send {
+  display: block;
+  width: 90px;
+  height: 80%;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 15px;
+  color: #FFFFFF;
+  background-color: #2196f3;
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-send:active {
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.4);
+}
+/*# sourceMappingURL=tracking.css.map */

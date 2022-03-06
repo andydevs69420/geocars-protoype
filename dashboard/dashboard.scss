@@ -1,0 +1,425 @@
+@import '../css/config';
+@import '../css/view';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap');
+
+
+body {
+    background-color: $primary;
+}
+
+
+.dashboard-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $primary;
+    @include onMediumDevice {
+        height: 100%;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+    }
+    @include onLargeDevice {
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+.chart-layout {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50%;
+    // background-color: yellow;
+    @include onMediumDevice {
+        height: auto;
+    }
+}
+
+.medium-tile-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: calc(90% + 20px);
+    // background-color: blue;
+    @include onMediumDevice {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    @include onLargeDevice {
+        margin: 10px 0;
+        width: calc(90% + 20px);
+    }
+}
+
+.two-column-only-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 50%;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.medium-tile {
+    display: block;
+    position: relative;
+    margin: 10px; 
+    padding-top: 30%;
+    width: calc(50% - 20px);
+    background-color: $app-white-0;
+    border-radius: 0.8em;
+    transition: box-shadow 0.6s ease-in;
+    box-shadow: 0px 4px 4px -2px rgba(0,0,0,0.2);
+    user-select: none;
+    background-color: yellow;
+    &:hover {
+        // border: 1px solid $app-blue-0;
+        transition: box-shadow 0.3s ease-in;
+        box-shadow: 0px 12px 20px -2px rgba(0,0,0,0.2);
+    }
+    @include onMediumDevice {
+        padding-top: calc(50% - 20px);
+    }
+}
+
+.mt-0 {
+    background: linear-gradient(45deg,rgba($app-blue-3,1),rgba($app-blue-3,0.4)) !important;
+    & > .m-tile-content-wrapper > * {
+        color: $app-white-0 !important;
+    }
+}
+
+.mt-1 {
+    background: linear-gradient(45deg,rgba($app-green-4,1),rgba($app-green-4,0.4)) !important;
+    & > .m-tile-content-wrapper > * {
+        color: $app-white-0 !important;
+    }
+}
+
+.mt-2 {
+    background: linear-gradient(45deg,rgba($app-green-5,1),rgba($app-green-5,0.4)) !important;
+    & > .m-tile-content-wrapper > * {
+        color: $app-white-0 !important;
+    }
+}
+
+.mt-3 {
+    background: linear-gradient(45deg,rgba($app-blue-4,1),rgba($app-blue-4,0.4)) !important;
+    & > .m-tile-content-wrapper > * {
+        color: $app-white-0 !important;
+    }
+}
+
+.m-tile-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.m-tile-icon {
+    margin: 3px 0;
+    font-size: 18px;
+    color: $app-black-3;
+}
+
+.m-tile-label {
+    margin: 3px 0;
+    width: 95%;
+    white-space: nowrap;
+    word-wrap: break-word;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-black-3;
+    overflow: hidden;
+}
+
+.m-tile-value {
+    margin: 3px 0;
+    max-width: 75%;
+    white-space: nowrap;
+    word-wrap: break-word;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: bold;
+    color: $app-black-3;
+    overflow: hidden;
+}
+
+.large-tile-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: calc(90% + 20px);
+    // background-color: blue;
+    @include onMediumDevice{
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    @include onLargeDevice {
+        margin: 10px 0;
+       
+    }
+}
+
+.large-tile-0 {
+    display: block;
+    position: relative;
+    margin: 10px;
+    padding-top: calc(30% - 20px);
+    width: calc(40% - 20px);
+    background-color: white;
+    transition: box-shadow 0.6s ease-in;
+    box-shadow: 0px 4px 4px -2px rgba(0,0,0,0.2);
+    border-radius: 0.8em;
+    &:hover {
+        // border: 1px solid $app-blue-0;
+        transition: box-shadow 0.3s ease-in;
+        box-shadow: 0px 12px 20px -2px rgba(0,0,0,0.2);
+    }
+    @include onMediumDevice{
+        padding-top: calc(100% - 20px);
+        width: calc(100% - 20px);
+    }
+}
+
+
+.large-tile-1 {
+    display: block;
+    position: relative;
+    margin: 10px;
+    padding-top: calc(30% - 20px);
+    width: calc(60% - 20px);
+    background-color: white;
+    transition: box-shadow 0.6s ease-in;
+    box-shadow: 0px 4px 4px -2px rgba(0,0,0,0.2);
+    border-radius: 0.8em;
+    &:hover {
+        // border: 1px solid $app-blue-0;
+        transition: box-shadow 0.3s ease-in;
+        box-shadow: 0px 12px 20px -2px rgba(0,0,0,0.2);
+    }
+    @include onMediumDevice{
+        padding-top: calc(100% - 20px);
+        width: calc(100% - 20px);
+    }
+}
+
+.chart-override {
+    display: block;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%);
+    width: 80% !important;
+    height: 80% !important;
+    // background-color: yellow;
+    @include onMediumDevice {
+        width: 80% !important;
+        height: 80% !important;
+    }
+}
+
+.override-chart-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 35px;
+    color: $app-black-3;
+    z-index: 0;
+}
+
+.chart-wrapper {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    @include onMediumDevice {
+        width: 95%;
+        height: 95%;
+    }
+    @include onLargeDevice {
+        width: 95%;
+        height: 95%;
+    }
+}
+
+.chart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.tracking-table-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 50%;
+    // background-color: green;
+    @include onMediumDevice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // position: initial;
+        height: auto;
+    }
+   
+}
+
+.expand-on-scroll > .dash-table {
+    width: 100%;
+    transition: width 0.2s ease-in;
+}
+
+.dash-table-wrapper {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    box-shadow: 0px 2px 6px -2px rgba(0,0,0,0.4);
+    border-radius: 0.8em;
+    overflow: hidden;
+    @include onMediumDevice {
+        position: relative;
+        inset: 0;
+        transform: initial;
+        margin: 10px;
+        padding-top: 90%;
+        height: initial;
+    }
+}
+
+.dash-table {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: width 0.2s ease-in;
+    background-color: $secondary;
+}
+
+
+.dash-table-header-row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // background-color: $app-black-3 !important;
+    background-color: $app-black-3 !important;
+    scroll-snap-align: initial !important;
+}
+
+.dash-table-row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    scroll-snap-align: start;
+    &:hover:not(.dash-table-header-row) {
+        border: 1px solid $app-gray-2;
+    }
+}
+
+
+
+.dash-table-cell {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: calc(60% / 3);
+    height: 100%;
+    // background-color: yellow;
+    &:nth-child(even) {
+        background-color: $app-bluish-white;
+    }
+}
+
+.lg-dash-table-cell {
+    width: 40% !important;
+}
+
+.cell-value {
+    width: 100%;
+    white-space: nowrap;
+    word-wrap: none;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    overflow: hidden;
+    color: $app-black-3;
+    user-select: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+.header-cell {
+    background-color: transparent !important;
+}
+
+.header-cell-icon {
+    color: $app-white-0;
+}
+
+.header-cell-label {
+    font-size: 15px;
+    font-weight: initial !important;
+    color: $app-white-0;
+    @include onMediumDevice {
+        display: none;
+    }
+}
+
+.rent-list {
+    display: block;
+    width: 100%;
+    height: calc(100% - 45px);
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.empty-rent-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.empty-icon {
+    margin: 5px 0;
+    font-size: 55px;
+    color: $app-gray-2;
+}
+
+.empty-label {
+    margin: 5px 0;
+    font-size: 18px;
+    color: $app-gray-2;
+}

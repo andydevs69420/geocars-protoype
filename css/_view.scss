@@ -1,0 +1,17 @@
+
+
+
+
+
+
+@mixin onMediumDevice {
+    @media screen and (min-width: 0px) and (max-width: 540px) {
+        @content;
+    }
+}
+
+@mixin onLargeDevice {
+    @media screen and (min-width: 540px) and (max-width: 768px) {
+        @content;
+    }
+}

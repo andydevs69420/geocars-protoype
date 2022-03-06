@@ -1,0 +1,983 @@
+@import '../css/config';
+@import '../css/view';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap');
+
+body {
+    background-color: $primary;
+}
+
+
+.booking-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: $secondary;
+    @include onMediumDevice {
+        display: block;
+    }
+}
+
+
+.booking-table {
+    display: block;
+    width: 100%;
+    height: 100%;
+    // background-color: green;
+    overflow: hidden;
+    @include onMediumDevice {
+        width: 100%;
+        height: 100%;
+        box-shadow: initial;
+        border-radius: initial;
+    }
+}
+
+
+.switch-mode-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 10px;
+    width: 100%;
+    height: 45px; 
+    background-color: $app-black-3 !important; 
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+
+.drop-down-status-wrapper {
+    display: flex;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.lbl-for-bstatus {
+    display: block;
+    max-width: 50%;
+    margin: auto 15px;
+    white-space: nowrap;
+    word-wrap: none;
+    font-size: 16px;
+    text-transform: uppercase !important;
+    text-overflow: ellipsis;
+    color: $app-white-0;
+    overflow: hidden;
+    @include onMediumDevice {
+        margin: auto 0;
+        width: 20%;
+        text-align: center;
+        // background-color: yellow;
+    }
+}
+
+.booking-status-list {
+    display: block;
+    margin: auto 5px;
+    min-width: 105px;
+    font-size: 16px;
+    text-transform: uppercase !important;
+    outline: none;
+    border: none;
+    color: $app-white-0;
+    background-color: transparent;
+    @include onMediumDevice {
+        margin: auto;
+        width: calc(100% - 20%);
+    }
+  
+}
+
+.booking-status-option {
+    text-transform: lowercase !important;
+    color: $app-black-3 !important;
+}
+
+.new-rent-button {
+    display: block;
+    width: 80px;
+    height: 30px;
+    outline: none;
+    border: none;
+    // border-radius: 100px;
+    border-radius: 4px;
+    color: $app-white-0;
+    background-color: $app-green-0;
+    box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.4);
+    &:active {
+        box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.4);
+    }
+    @include onMediumDevice {
+        position: fixed;
+        top: initial;
+        right: 20px;
+        bottom: 75px;
+        transform: initial;
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+    }
+}
+
+.new-rent-icon {
+    font-size: 13px;
+}
+
+.new-rent-label {
+    font-size: 13px;
+    font-weight: bold;
+    @include onMediumDevice {
+        display: none;
+    }
+}
+
+.booking-table-header-row {
+    scroll-snap-align: none !important;
+    background-color: $app-black-3 !important;
+    // box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.booking-table-header-lbl {
+    @include onMediumDevice {
+        display: none;
+    }
+}
+
+.booking-table-row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    height: 45px;
+    // border: 1px solid transparent;
+    scroll-snap-align: start;
+    &:hover:not(.booking-table-header-row) {
+        border: 1px solid $app-gray-2;
+    }
+}
+
+.booking-table-row-cell-md {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(60% / 3);
+    height: 100%;
+    &:nth-child(even) {
+        background-color: $app-bluish-white;
+    }
+}
+
+.booking-table-row-cell-lg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+    border: 1px solid transparent;
+}
+
+.header-row-cell {
+    background-color: transparent !important;
+}
+
+.header-cell {
+    color: $app-white-0 !important;
+    font-size: 15px !important;
+    font-weight: initial !important;
+}
+
+.booking-table-row-cell-value {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: none;
+    font-size: 14px;
+    overflow: hidden;
+    color: $app-black-3;
+    user-select: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+
+.booking-list {
+    display: block;
+    width: 100%;
+    height: calc(100% - 90px);
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    // background-color: yellow;
+}
+
+.empty-booking-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.empty-booking-icon {
+    display: block;
+    margin: 5px 0;
+    font-size: 55px;
+    color: $app-gray-2;
+}
+
+.empty-booking-label {
+    margin: 5px 0;
+    font-size: 18px;
+    color: $app-gray-2;
+}
+
+
+/************* new booking ***************/ 
+
+.new-booking-view-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    // background-color: rgba(255,255,255,0.8);
+    min-width: 1024;
+    min-height: 768px;  
+    @include onMediumDevice {
+        min-width: 280px;
+        min-height: 568px;
+    }
+    @include onLargeDevice{
+        min-width: 540px;
+        min-height: 768px;  
+    }
+}
+
+.nb-overlay-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    @supports (filter: blur(5px)) {
+        filter: blur(5px);
+    }
+}
+
+.nb-overlay-fg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @supports (backdrop-filter: blur(5px)) {
+        backdrop-filter: blur(5px);
+    }
+    @supports not (backdrop-filter: blur(5px)) {
+        background-color: rgba(255,255,255,0.8);
+    }
+}
+
+.new-booking-panel {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 680px;
+    // height: 450px;
+    height: 680px;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: $app-white-0;
+    box-shadow: 0px 12px 28px rgba(0,0,0,0.2);
+    z-index: 3;
+    @include onMediumDevice {
+        // width: 90%;
+        // height: 90%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: initial;
+    }
+    @include onLargeDevice {
+        width: 90%;
+        height: 70%;
+    }
+}
+
+.close-new-booking-btn {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    color: $app-gray-2;
+    background-color: $app-white-0;
+    &:hover {
+        transition: all 0.2s linear;
+        color: $app-black-0;
+        background-color: $app-bluish-white;
+    }
+}
+
+
+.new-booking-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+
+.new-booking-content {
+    display: block;
+    width: 90%;
+    max-height: 100%;
+    overflow-y: auto;
+    @include onMediumDevice {
+        max-height: 100%;
+    }
+    @include onLargeDevice {
+        max-height: 100%;
+    }
+}
+
+.new-booking-content-label {
+    display: block;
+    max-width: 100%;
+    margin: 25px 0;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    color: $app-black-0;
+    @include onMediumDevice {
+        font-size: 25px;
+    }
+}
+
+.new-booking-content-label > .new-booking-content-icon {
+    color: $app-blue-0;
+}
+
+.new-booking-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+    @include onMediumDevice {
+        justify-content: space-around;
+        flex-direction: column;
+        margin: 10px 0  0 0;
+    }
+}
+
+.nb-contact-wrapper {
+    margin: 0 0 10px 0;
+    width: 66.669%;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.nb-date-wrapper {
+    @extend .nb-contact-wrapper;
+    margin: 10px 0;
+}
+
+.nb-input-user-group {
+    display: block;
+    position: relative;
+    width: calc(95% / 3);
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.nb-input-contact-group {
+    display: block;
+    position: relative;
+    width: calc(95% / 2);
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.nb-input-date-group {
+    @extend .nb-input-contact-group;
+}
+
+.nb-input-icon {
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    line-height: 35px !important;
+    text-align: center;
+    color: $app-gray-2;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.nb-input-field {
+    display: block;
+    margin: 2px 0;
+    padding: 0 5px 0 35px;
+    width: 100%;
+    height: 35px;
+    outline: none;
+    color: $app-black-3;
+    border: none;
+    border-bottom: 1px solid $app-gray-2;
+    &:focus {
+        border-bottom: 2px solid $app-blue-0;
+        @include onMediumDevice {
+            border: none;
+            border-bottom: 2px solid $app-blue-0;
+        }
+    }
+    @include onMediumDevice {
+        border: none;
+        border-bottom: 1px solid $app-gray-2;
+        border-radius: initial;
+        background-color: initial;
+    }
+}
+
+.nb-input-valdator {
+    display: block;
+    margin: 2px 0;
+    width: 100%;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    overflow: hidden;
+    color: $app-red-0;
+}
+
+.nb-label {
+    display: block;
+    margin: 10px 0;
+    max-width: 50%;
+    white-space: nowrap;
+    word-wrap: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $app-black-3;
+    @include onMediumDevice {
+        max-width: 100%;
+        font-size: 15px;
+    }
+}
+
+.select-available-cars {
+    display: block;
+    margin: 10px 0;
+    width: 31.66%;
+    height: 35px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $app-gray-2;
+    // background-color: $app-bluish-white;
+    &:focus {
+        border-bottom: 2px solid $app-blue-0;
+        @include onMediumDevice {
+            border: none;
+            border-bottom: 2px solid $app-blue-0;
+        }
+    }
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.opt-brand {
+    font-size: 200px;
+    font-weight: bold !important;
+}
+
+.images-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    min-height: 102px;
+    max-height: 202px;
+    overflow-y: auto;
+    border: 1px dashed $app-gray-2;
+    background-color: $app-bluish-white;
+}
+
+.car-image {
+    display: block;
+    margin: 4px 2px;
+    width: 92px;
+    height: 92px;
+}
+
+
+.empty-images {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: $app-gray-2;
+}
+
+.nb-date-label {
+    display: block;
+    max-width: 100%;
+    font-size: 12px;
+    white-space: nowrap;
+    word-break: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    // font-weight: bold;
+}
+
+.book-btn {
+    display: block;
+    margin: 10px 0;
+    width: 120px;
+    height: 35px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-white-0;
+    background-color: $app-blue-2;
+    box-shadow: 0px 2px 6px -2px rgba(0,0,0,0.4);
+    &:active {
+        transition: box-shadow 0.2s ease-in;
+        box-shadow: 0px 4px 8px -3px rgba(0,0,0,0.4);
+    }
+}
+
+
+/*************** approval review *****************/
+
+.approval-review-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    // background-color: rgba(255,255,255,0.8);
+    min-width: 1024;
+    min-height: 768px;  
+    @include onMediumDevice {
+        min-width: 280px;
+        min-height: 568px;
+    }
+    @include onLargeDevice{
+        min-width: 540px;
+        min-height: 768px;  
+    }
+}
+
+.ar-overlay-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    @supports (filter: blur(5px)) {
+        filter: blur(5px);
+    }
+}
+
+.ar-overlay-fg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @supports (backdrop-filter: blur(5px)) {
+        backdrop-filter: blur(5px);
+    }
+    @supports not (backdrop-filter: blur(5px)) {
+        background-color: rgba(255,255,255,0.8);
+    }
+}
+
+.approval-review-panel {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 680px;
+    // height: 450px;
+    height: 680px;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: $app-white-0;
+    box-shadow: 0px 12px 28px rgba(0,0,0,0.2);
+    z-index: 3;
+    @include onMediumDevice {
+        // width: 90%;
+        // height: 90%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: initial;
+    }
+    @include onLargeDevice {
+        width: 90%;
+        height: 70%;
+    }
+}
+
+
+.close-approval-review {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    color: $app-gray-2;
+    background-color: $app-white-0;
+    &:hover {
+        transition: all 0.2s linear;
+        color: $app-black-0;
+        background-color: $app-bluish-white;
+    }
+}
+
+.approval-review-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.approval-review-content {
+    display: block;
+    width: 90%;
+    max-height: 100%;
+    overflow-y: auto;
+    @include onMediumDevice {
+        max-height: 100%;
+    }
+    @include onLargeDevice {
+        max-height: 100%;
+    }
+}
+
+.aproval-review-content-label {
+    display: block;
+    max-width: 100%;
+    margin: 25px 0;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    color: $app-black-0;
+    @include onMediumDevice {
+        font-size: 25px;
+    }
+}
+
+.aproval-review-content-label > .approval-review-content-icon {
+    color: $app-blue-0;
+}
+
+.approval-review-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+    @include onMediumDevice {
+        justify-content: space-around;
+        flex-direction: column;
+        margin: 10px 0  0 0;
+    }
+}
+
+.ar-contact-wrapper {
+    margin: 0 0 10px 0;
+    width: 66.669%;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.ar-date-wrapper {
+    @extend .ar-contact-wrapper;
+}
+
+.ar-external-lbl {
+    display: block;
+    margin: 10px 0;
+    max-width: 50%;
+    white-space: nowrap;
+    word-wrap: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $app-black-3;
+    @include onMediumDevice {
+        max-width: 100%;
+        font-size: 15px;
+    }
+}
+
+.ar-input-user-group {
+    display: block;
+    position: relative;
+    width: calc(95% / 3);
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.ar-input-contact-group {
+    display: block;
+    position: relative;
+    width: calc(95% / 2);
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.ar-input-car-group {
+    display: block;
+    position: relative;
+    width: calc(95% / 4);
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.ar-input-date-group {
+    @extend .ar-input-contact-group;
+}
+
+.ar-input-icon {
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    line-height: 35px !important;
+    text-align: center;
+    color: $app-gray-2;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.ar-input-field {
+    display: block;
+    margin: 2px 0;
+    padding: 0 5px 0 35px;
+    width: 100%;
+    height: 35px;
+    outline: none;
+    color: $app-black-3;
+    border: none;
+    border-bottom: 1px solid $app-gray-2;
+    &:focus {
+        border-bottom: 2px solid $app-blue-0;
+        @include onMediumDevice {
+            border: none;
+            border-bottom: 2px solid $app-blue-0;
+        }
+    }
+    @include onMediumDevice {
+        border: none;
+        border-bottom: 1px solid $app-gray-2;
+        border-radius: initial;
+        background-color: initial;
+    }
+}
+
+.ar-images-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    min-height: 102px;
+    max-height: 202px;
+    overflow-y: auto;
+    border: 1px dashed $app-gray-2;
+    background-color: $app-bluish-white;
+}
+
+.ar-car-image {
+    display: block;
+    margin: 4px 2px;
+    width: 92px;
+    height: 92px;
+}
+
+
+.ar-empty-images {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: $app-gray-2;
+}
+
+.ar-date-label {
+    display: block;
+    max-width: 100%;
+    font-size: 12px;
+    white-space: nowrap;
+    word-break: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    // font-weight: bold;
+}
+
+.tally-table {
+    display: block;
+    margin: 10px 0;
+    width: 30%;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.tally-table-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.tally-header-cell {
+    display: block;
+    width: 40%;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    word-wrap: none;
+    overflow: hidden;
+}
+
+.tally-value-cell {
+    display: block;
+    width: 60%;
+    text-align: right;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    white-space: nowrap;
+    word-wrap: none;
+    overflow: hidden;
+}
+
+.ar-control-button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 10px 0;
+    width: 100%;
+}
+
+// on pending control
+.ar-accept-btn  , 
+.ar-decline-btn , 
+.ar-pickup-btn  , 
+.ar-cancel-btn  , 
+.ar-return-btn {
+    display: block;
+    width: 120px;
+    height: 35px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-white-0;
+    background-color: $app-blue-2;
+    box-shadow: 0px 2px 6px -2px rgba(0,0,0,0.4);
+    &:active {
+        transition: box-shadow 0.2s ease-in;
+        box-shadow: 0px 4px 8px -3px rgba(0,0,0,0.4);
+    }
+}
+
+.ar-decline-btn , .ar-cancel-btn {
+    margin: 0 10px;
+    background-color: $app-red-1;
+}

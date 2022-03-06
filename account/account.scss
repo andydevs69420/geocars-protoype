@@ -1,0 +1,703 @@
+@import '../css/config';
+@import '../css/view';
+
+
+
+body {
+    background-color: $primary;
+}
+
+
+.account-wrapper {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: $app-white-0;
+}
+
+.account-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.account-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-cover-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.profile-cover {
+    display: block;
+   
+    padding-top: 45%;
+    width: 100%;
+    z-index: 1;
+    background-color: $app-bluish-white;
+    @include onMediumDevice {
+        margin: auto;
+        width: 100%;
+        height: initial;
+    }
+    @include onLargeDevice {
+        margin: auto;
+        width: 100%;
+        height: initial;
+    }
+}
+
+.btn-pick-cover {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: $app-white-0;
+    box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.2);
+}
+
+.btn-pick-cover > .pick-cover-icon {
+    color: $app-black-0;
+}
+
+.btn-pick-cover:active {
+    background-color: $app-bluish-white;
+    box-shadow: 0px 6px 8px -2px rgba(0,0,0,0.2);
+}
+
+
+.cover-file {
+    display: none;
+}
+
+.profile-dp-wrapper {
+    display: block;
+    position: relative;
+    margin: -62px auto 0 62px;
+    width: 124px;
+    height: 124px;
+    z-index: 2;
+    overflow: visible;
+    border-radius: 100%;
+    background-color: $app-white-0;
+    @include onMediumDevice {
+        margin: -62px auto 0 auto;
+    }
+}
+
+
+.profile-dp {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 92%;
+    height: 92%;
+    border-radius: 100%;
+    background-color: $app-bluish-white;
+}
+
+.btn-pick-dp {
+    display: block;
+    position: absolute;
+    right: -2px;
+    bottom: 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: $app-white-0;
+    box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.2);
+}
+
+.btn-pick-dp > .pick-dp-icon {
+    color: $app-black-0;
+}
+
+.btn-pick-dp:active {
+    background-color: $app-bluish-white;
+    box-shadow: 0px 6px 8px -2px rgba(0,0,0,0.2);
+}
+
+.dp-file {
+    display: none;
+}
+
+.account-company-wrapper {
+    display: block;
+    margin: -50px auto 0 200px;
+    max-width: 45%;
+    font-size: 30px;
+    font-weight: bold;
+    @include onMediumDevice {
+        margin: auto;
+        max-width: 100%;
+    }
+}
+
+.account-company {
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $app-black-0;
+    @include onMediumDevice {
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+.information-tray {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+    width: 60%;
+    @include onMediumDevice {
+        margin: 15px auto;
+        width: 85%;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3);
+    // background-color: yellow;
+}
+
+.column > .column-data {
+    font-size: 18px;
+    font-weight: bold;
+    color: $app-black-0;
+}
+
+.column > .column-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: $app-black-0;
+}
+
+
+.transformable-column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px auto;
+    width: 90%;
+    // background-color: yellow;
+    @include onMediumDevice {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.t-col-1 {
+    display: block;
+    width: 50%;
+    // background-color: green;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.info-container {
+    display: block;
+    position: relative;
+    margin: auto;
+    padding-top: 90%;
+    width: 90%;
+    overflow: hidden;
+    transition: box-shadow 0.6s ease-in;
+    &:hover {
+        transition: box-shadow 0.2s ease-in;
+        box-shadow: 0px 6px 10px -2px rgba(0,0,0,0.2);
+        transition: box-shadow 0.4s ease-in;
+    }
+    @include onMediumDevice {
+        padding-top: 85%;
+        width: 85%;
+        box-shadow: initial;
+        &:hover {
+            transition: initial;
+            box-shadow: initial;
+        }
+    }
+}
+
+.information {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: yellow;
+}
+
+.label-action-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    // background-color: yellow;
+}
+
+.info-label {
+    margin: 0 5px;
+    font-size: 22px;
+    font-weight: bold;
+    color: $app-black-0;
+}
+
+.edit-user-btn {
+    width: 25px;
+    height: 25px;
+    outline: none;
+    border: none;
+    color: $app-black-0;
+    background-color: transparent;
+}
+
+.row-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 50px);
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    // background-color: yellow;
+}
+
+
+.icon-value-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 10px auto;
+    width: 95%;
+    scroll-snap-align: start;
+    // background-color: yellow;
+}
+
+.info-icon {
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+    color: $app-black-0;
+    // background-color: green;
+    @include onMediumDevice {
+        font-size: 16px;
+    }
+}
+
+.info-value {
+    padding: 0 5px;
+    width: calc(100% - 30px);
+    max-lines: 2;
+    word-wrap: none;
+    white-space: nowrap;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $app-black-0;
+    @include onMediumDevice {
+        font-size: 14px;
+    }
+}
+
+.t-col-2 {
+    display: block;
+    width: 50%;
+    // background-color: green;
+    @include onMediumDevice {
+        width: 100%;
+    }
+}
+
+.chart-wrapper-0 {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 90%;
+    width: 90%;
+    transition: box-shadow 0.6s ease-in;
+    &:hover {
+        transition: box-shadow 0.2s ease-in;
+        box-shadow: 0px 8px 10px -2px rgba(0,0,0,0.2);
+        transition: box-shadow 0.4s ease-in;
+    }
+    @include onMediumDevice {
+        padding-top: 85%;
+        width: 85%;
+        &:hover {
+            transition: initial;
+            box-shadow: initial;
+        }
+    }
+}
+
+.chart-container-0 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: auto;
+    padding-top: 50%;
+    width: 50%;
+    @include onMediumDevice {
+        margin: 10px auto;
+        padding-top: 60%;
+        width: 60%;
+    }
+}
+
+.dash-label {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    word-wrap: break-word;
+    white-space: normal;
+    color: $app-black-0;
+    @include onMediumDevice {
+        font-size: 18px;
+    }
+}
+.dashboard-remaining {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/********************* update info view *********************/
+.update-info-view-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    // background-color: rgba(255,255,255,0.8);
+    min-width: 1024;
+    min-height: 768px;  
+    @include onMediumDevice {
+        min-width: 280px;
+        min-height: 568px;
+    }
+    @include onLargeDevice{
+        min-width: 540px;
+        min-height: 768px;  
+    }
+}
+
+.ui-overlay-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    @supports (filter: blur(5px)) {
+        filter: blur(5px);
+    }
+}
+
+.ui-overlay-fg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @supports (backdrop-filter: blur(5px)) {
+        backdrop-filter: blur(5px);
+    }
+    @supports not (backdrop-filter: blur(5px)) {
+        background-color: rgba(255,255,255,0.8);
+    }
+}
+
+.update-info-panel {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 680px;
+    height: 450px;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: $app-white-0;
+    box-shadow: 0px 12px 28px rgba(0,0,0,0.2);
+    z-index: 3;
+    @include onMediumDevice {
+        // width: 90%;
+        // height: 90%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: initial;
+    }
+    @include onLargeDevice {
+        width: 90%;
+        height: 70%;
+    }
+}
+
+.close-update-info {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    color: $app-gray-2;
+    background-color: $app-white-0;
+    &:hover {
+        transition: all 0.2s linear;
+        color: $app-black-0;
+        background-color: $app-bluish-white;
+    }
+}
+
+.update-info-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+
+.update-info-content {
+    display: block;
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    // background-color: yellow;
+    @include onMediumDevice {
+        max-height: 100%;
+    }
+    @include onLargeDevice {
+        max-height: 100%;
+    }
+}
+
+.update-info-label {
+    display: block;
+    max-width: 100%;
+    margin: 25px 0;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    color: $app-black-0;
+    @include onMediumDevice {
+        font-size: 25px;
+    }
+}
+
+.update-info-label > .update-info-label-icon {
+    color: $app-blue-0;
+}
+
+.update-tab-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 10px 0;
+    width: 100%;
+    height: 45px;
+    // background-color: yellow;
+}
+
+.tab-header {
+    display: block;
+    width: 15%;
+    height: 100%;
+    // background-color: green;
+    @include onMediumDevice {
+        width: calc(100% / 2);
+    }
+}
+
+.tab-header-link {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-black-3;
+    border-bottom: 2px solid transparent;
+    overflow: hidden;
+    &.active-tab {
+        color: $app-blue-0;
+        border-bottom: 2px solid $app-blue-0;
+    }
+}
+
+
+.tab-wrap {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    vertical-align: top;
+    // background-color: yellow;
+}
+
+.update-tab-container {
+    display: inline-flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    white-space: normal;
+    scroll-snap-align: start;
+    // background-color: yellow;
+    @include onMediumDevice {
+        flex-direction: column;
+    }
+}
+
+.update-input-wrapper {
+    display: block;
+    position: relative;
+    margin: 10px 0;
+    // background-color: yellow;
+    &.info-prop {
+        width: calc(95% / 4);
+    }
+    &.pass-prop {
+        width: calc(95% / 3);
+    }
+    @include onMediumDevice {
+        width: 100% !important;
+    }
+}
+
+.update-input-icon {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px !important;
+    text-align: center;
+    z-index: 2;
+    color: $app-gray-2;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.update-input-field {
+    display: block;
+    padding: 0 5px 0 35px;
+    width: 100%;
+    height: 35px;
+    z-index: 1;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $app-gray-2;
+    &:focus {
+        border-bottom: 2px solid $app-blue-0;
+        @include onMediumDevice {
+            border: none;
+            border-bottom: 2px solid $app-blue-0;
+        }
+    }
+    @include onMediumDevice {
+        border: none;
+        border-bottom: 1px solid $app-gray-2;
+        border-radius: initial;
+        background-color: initial;
+    }
+}
+
+.validate-update-field {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    word-wrap: none;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: $app-red-0;
+    overflow: hidden;
+}
+
+.update-user-info {
+    display: block;
+    margin: 10px 0;
+    width: 120px;
+    height: 35px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: $app-white-0;
+    background-color: $app-green-0;
+    box-shadow: 0px 2px 6px -2px rgba(0,0,0,0.4);
+    &:active {
+        transition: box-shadow 0.2s ease-in;
+        box-shadow: 0px 4px 8px -3px rgba(0,0,0,0.4);
+    }
+}

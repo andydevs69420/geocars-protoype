@@ -1,0 +1,360 @@
+@import '../css/view';
+@import '../css/colors';
+
+
+
+
+.side-bar {
+    display: block;
+    position: relative;
+    width: 210px;
+    height: 100%;
+    background-color: $app-black-3;
+    box-shadow: 2px 0px 8px -2px rgba(0,0,0,0.4);
+    @include onMediumDevice {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-width: 280px;
+        z-index: 1000;
+        box-shadow: 0px 3px 6px -2px rgba(0,0,0,0.4);
+    }
+    @include onLargeDevice {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-width: 540px;
+        z-index: 1000;
+        box-shadow: 0px 3px 6px -2px rgba(0,0,0,0.4);
+    }
+}
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    // background-color: yellow;
+    @include onMediumDevice {
+        position: relative;
+        width: 100%;
+        height: 56px;
+    }
+    @include onLargeDevice {
+        position: relative;
+        width: 100%;
+        height: 56px;
+    }
+}
+
+.profile-wrapper > .company-avatar-wrapper {
+    display: block;
+    position: relative;
+    margin: 5px 0;
+    padding-top: 44%;
+    width: 44%;
+    border-radius: 100%;
+    background-color: $app-white-0;
+    box-shadow: 0px 8px 8px -2px rgba(0,0,0,0.2);
+    @include onMediumDevice {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        margin: initial;
+        padding-top: 40px;
+        width: 40px;
+    }
+    @include onLargeDevice {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        margin: initial;
+        padding-top: 40px;
+        width: 40px;
+    }
+}
+
+.company-avatar-wrapper > .company-round-avatar {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 92%;
+    height: 92%;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.company-round-avatar > .avatar-image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+}
+
+.profile-wrapper > .company-name {
+    margin: 5px 0;
+    width: 90%;
+    white-space: nowrap;
+    word-wrap: none;
+    color: $app-white-0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    overflow: hidden;
+    @include onMediumDevice {
+        margin: initial;
+        width: 70%;
+        font-size: 18px;
+    }
+    @include onLargeDevice {
+        margin: initial;
+        width: 70%;
+        font-size: 18px;
+    }
+}
+
+.links-wrapper {
+    display: block;
+    width: 100%;
+    height: calc(100% - 215px);
+    // background-color: green;
+    @include onMediumDevice {
+        height: auto;
+    }
+    @include onLargeDevice {
+        height: auto;
+    }
+}
+
+.links-wrapper > .menu-list {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    @include onMediumDevice {
+        display: block;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+    @include onLargeDevice {
+        display: block;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+}
+
+.menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-list > .menu-item {
+    display: block;
+    margin: auto;
+    width: 95%;
+    height: 40px;
+    @include onMediumDevice {
+       display: inline-flex;
+       width: calc(100% / 4);
+    }
+    @include onLargeDevice {
+        display: inline-flex;
+        width: calc(100% / 4);
+    }
+}
+
+.menu-item > .menu-link {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+    // background-color: yellow;
+    @include onMediumDevice {
+        justify-content: center;
+        align-items: center;
+        padding: initial;
+    }
+    @include onLargeDevice {
+        justify-content: center;
+        align-items: center;
+        padding: initial;
+    }
+}
+
+
+.menu-link:hover {
+    & > .menu-link-icon {
+        color: $app-white-0;
+    }
+    & > .menu-link-label {
+        color: $app-white-0;
+    }
+}
+
+.menu-link.active {
+    & > .menu-link-icon {
+        color: $app-white-0;
+       
+    }
+    & > .menu-link-label {
+        font-weight: bold;
+        color: $app-white-0;
+    }
+    @include onMediumDevice {
+        border-bottom: 4px solid $app-white-0;
+    }
+    @include onLargeDevice {
+        border-bottom: 4px solid $app-white-0;
+    }
+}
+
+
+.menu-link > .menu-link-icon {
+    margin: 0 3px;
+    width: 30px;
+    font-size: 22px;
+    color: $app-gray-1;
+    @include onMediumDevice {
+        margin: initial;
+        width: auto;
+    }
+    @include onLargeDevice {
+        margin: initial;
+        width: auto;
+    }
+}
+
+.menu-link > .menu-link-label {
+    margin: 0 3px;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    color: $app-gray-1;
+    overflow: hidden;
+    @include onMediumDevice {
+        display: none;
+        margin: initial;
+    }
+    @include onLargeDevice{
+        display: none;
+        margin: initial;
+    }
+}
+
+
+.logout-link {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    width: 95%;
+    height: 35px;
+    text-decoration: none;
+    // background-color: yellow;
+    @include onMediumDevice {
+        position: fixed;
+        left: initial;
+        right: 20px;
+        transform: initial;
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        background-color: $app-blue-0;
+        box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.4);
+    }
+    @include onLargeDevice {
+        position: fixed;
+        left: initial;
+        right: 20px;
+        transform: initial;
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        background-color: $app-blue-0;
+        box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.4);
+    }
+}
+
+.logout-link:hover {
+    & > .logout-link-icon {
+        color: $app-white-0;
+    }
+    & > .logout-link-label {
+        color: $app-white-0;
+    }
+}
+
+
+.logout-link > .logout-link-icon {
+    margin: 0 3px;
+    width: 30px;
+    font-size: 22px;
+    color: $app-gray-1;
+    @include onMediumDevice {
+        margin: initial;
+        width: auto;
+    }
+    @include onLargeDevice {
+        margin: initial;
+        width: auto;
+    }
+}
+
+.logout-link > .logout-link-label {
+    margin: 0 3px;
+    white-space: nowrap;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: $app-gray-1;
+    overflow: hidden;
+    @include onMediumDevice {
+        display: none;
+        margin: initial;
+    }
+    @include onLargeDevice {
+        display: none;
+        margin: initial;
+    }
+}
+
+.safe-area {
+    display: block;
+    width: 768px;
+    height: 100%;
+    @include onMediumDevice {
+        display: block;
+        padding-top: 96px;
+        width: 100%;
+    }
+    @include onLargeDevice {
+        display: block;
+        padding-top: 96px;
+        width: 100%;
+    }
+}
