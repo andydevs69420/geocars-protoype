@@ -24,12 +24,15 @@
     <link rel="stylesheet" href="signin.css">
     <!-- JS -->
     <script src="https://kit.fontawesome.com/0ad786b032.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="signin-wrapper">
         <div class="center-panel">
             <!-- form panel -->
-            <div class="form-panel">
+            <div class="form-panel px-3 px-md-0 pt-5 pb-3 py-md-0">
 
                 <!-- signin title -->
                 <span class="signin-title overflow-ellipsis" role="text">
@@ -85,11 +88,7 @@
 
             </div>
             <!-- background panel -->
-            <div class="background-panel" style="background-image: linear-gradient(to bottom , rgba(0,0,0,0.6) ,rgba(0,0,0,0.6)), url('../assets/signin/signin-background.jpeg');">
-                <span class="background-message" role="text">
-                    Start your day with a simple sign in.
-                </span>
-            </div>
+            <div class="background-panel" style="background-image: linear-gradient(to bottom , rgba(0,0,0,0.6) ,rgba(0,0,0,0.6)), url('../assets/signin/signin-background.jpeg');"></div>
         </div>
     </div>
 </body>
