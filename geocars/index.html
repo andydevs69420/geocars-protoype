@@ -16,75 +16,80 @@
     <link rel="stylesheet" href="geocars.css">
     <!-- third-party js  -->
     <script src="https://kit.fontawesome.com/0ad786b032.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav id="nav" class="nav-bar">
-        <!-- collapase btn on mobile view -->
-        <button id="collapse-btn" class="collapse-btn">
-            <i class="collapse-icon fa fa-bars"></i>
-        </button>
-        <!-- for geocars icon and label -->
-        <div class="brand-wrapper">
-            <span class="brand-label" role="text">
-                Geocars
-            </span>
-        </div>
-        <!-- for geocars links -->
-        <!-- 
-            status-hide  -> display: none;
-            status-shown -> display: block;
 
-         -->
-        <ul id="collapse-wrapper" class="nav-links-wrapper status-hide">
-            <!--
-            --><li class="nav-link-option">
-                <a href="#home" class="nav-link active-link" onclick="on_collapse()">
-                    <span class="link-label" role="text">Home</span>
-                </a>
-            </li><!--
-            --><li class="nav-link-option">
-                <a href="#about" class="nav-link" onclick="on_collapse()">
-                    <span class="link-label" role="text">About</span>
-                </a>
-            </li><!--
-            --><li class="nav-link-option">
-                <a href="#pricing" class="nav-link" onclick="on_collapse()">
-                    <span class="link-label" role="text">Pricing</span>
-                </a>
-            </li><!--
-            --><li class="nav-link-option">
-                <a href="#contact" class="nav-link" onclick="on_collapse()">
-                    <span class="link-label" role="text">Contact us</span>
-                </a>
-            </li><!--
-            -->
-        </ul>
+    <nav id="nav" class="navbar navbar-expand-md fixed-top navbar-dark text-light shadow-sm">
+        <div class="container-fluid justify-content-start justify-content-md-between overflow-show">
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapsable">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-brand mx-2 mx-md-0">
+                <span class="text-warning">Geocars</span>
+            </div>
+
+            <div id="navbar-collapsable" class="navbar-collapse collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
     </nav>
+
+    
     <!-- tabs -->
-    <div id="home" class="tab">
-        <div class="background" style="background: url('../assets/wallpaperflare.com_wallpaper.jpg');">
-            <div class="wrapper">
-                <div class="wrapper-bg"></div>
-                <div class="wrapper-fg">
-                    <span class="large-title" role="text">
-                        Find the ideal car for you.
-                    </span>
-                    <span class="small-description">
-                        We have more cars for you to choose.
-                    </span>
-                    <a href="#platforms" class="explore-btn">
-                        Explore
-                    </a>
+    <div id="home" class="d-block w-100">
+        <div class="d-block background" style="background: url('../assets/wallpaperflare.com_wallpaper.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-5 offset-0 offset-md-6 offset-lg-7 py-5">
+
+                   
+                        <div class="wrapper mx-auto my-5 position-relative p-4">
+                            <div class="wrapper-bg"></div>
+                            <div class="wrapper-fg"></div>
+                            <div class="content position-relative top-0">
+                                <span class="large-title" role="text">
+                                    Find the ideal car for you.
+                                </span>
+                                <span class="small-description d-block">
+                                    We have more cars for you to choose.
+                                </span>
+                                <a href="#platforms" class="explore-btn d-inline-block btn btn-sm btn-success rounded-pill mx-0 my-2 px-4">
+                                    Explore
+                                </a>
+                            </div>
+                        </div>
+                        
+        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div id="platforms" class="availability">
         <span class="av-label" role="text">
             Available for
         </span>
         <div class="platforms-container">
-            <!-- TODO: add download links -->
             <!-- web admin -->
             <a href="../signin/" class="platform">
                 <i class="platform-icon fa fa-code"></i>
@@ -97,203 +102,270 @@
             </a>
         </div>
     </div>
-    <div id="about" class="tab">
-        <span class="about-title" role="text">
-            Find the best car for you
-        </span>
-        <p class="about-description">
-            Geocars will help you choose 
-            the right vehicle for your needs. 
-            Our team prioritizes safety for 
-            both companies and their clients 
-            using real-time vehicle 
-            tracking with the help of GPS 
-            technology within Cagayan de Oro City, 
-            Philippines. City of golden friendship.
-        </p>
-    </div>
-    <div id="pricing" class="tab">
-        <span class="pricing-title">
-            Choose the right plan
-        </span>
-        <div class="plan-container">
-            <!-- plan-1 -->
-            <div class="plan">
-                <div class="plan-fg-panel">
-                    <span class="plan-title-wrapper">
-                        <i class="plan-icon fa fa-rocket"></i>
-                        <span class="plan-title">
-                            FREEMIUM
-                        </span>
-                    </span>
-                    <span class="table" role="table">
-                        <!-- feature 0 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">8 hours admin panel</span>
-                            </span>
-                        </span>
-                         <!-- feature 1 -->
-                         <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Dashboard</span>
-                            </span>
-                        </span>
-                        <!-- feature 2 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">limited to 5 car slot</span>
-                            </span>
-                        </span>
-                        <!-- feature 3 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Offline tracking</span>
-                            </span>
-                        </span>
-                      
-                    </span>
-                </div>
-            </div>
 
-            <!-- plan-2 -->
-            <div class="plan">
-                <div class="plan-fg-panel">
-                    <span class="plan-title-wrapper">
-                        <i class="plan-icon fa fa-rocket"></i>
-                        <span class="plan-title">
-                            PRO
+    <div id="about" class="d-block w-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="form-label text-center mt-4 mb-5">
+                        <span class="about-title" role="text">
+                            Find the best car for you
                         </span>
-                    </span>
-                    <span class="table" role="table">
-                        <!-- feature 0 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">18 hours admin panel</span>
-                            </span>
-                        </span>
-                         <!-- feature 1 -->
-                         <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Dashboard</span>
-                            </span>
-                        </span>
-                        <!-- feature 2 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">limited to 8 car slot</span>
-                            </span>
-                        </span>
-                        <!-- feature 3 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Offline tracking</span>
-                            </span>
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <!-- plan-3 -->
-            <div class="plan">
-                <div class="plan-fg-panel">
-                    <span class="plan-title-wrapper">
-                        <i class="plan-icon fa fa-rocket"></i>
-                        <span class="plan-title">
-                            BUSINESS
-                        </span>
-                    </span>
-                    <span class="table" role="table">
-                        <!-- feature 0 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">24 / 7 admin panel</span>
-                            </span>
-                        </span>
-                         <!-- feature 1 -->
-                         <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Dashboard</span>
-                            </span>
-                        </span>
-                        <!-- feature 2 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Unlimited car slots</span>
-                            </span>
-                        </span>
-                        <!-- feature 3 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Offline tracking</span>
-                            </span>
-                        </span>
-                        <!-- feature 4 -->
-                        <span class="row" role="row">
-                            <span class="column cell-0" role="cell">
-                                <i class="feature-icon feature-yes fa fa-check-circle"></i>
-                            </span>
-                            <span class="column cell-1" role="cell">
-                                <span class="feature-desc" role="text">Early access to new features</span>
-                            </span>
-                        </span>
-                    </span>
+                    </div>
+                    <p class="about-description">
+                        Geocars will help you choose 
+                        the right vehicle for your needs. 
+                        Our team prioritizes safety for 
+                        both companies and their clients 
+                        using real-time vehicle 
+                        tracking with the help of GPS 
+                        technology within Cagayan de Oro City, 
+                        Philippines. City of golden friendship.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    <div id="contact" class="tab">
-        <span class="contact-title" role="text">
-            Get in touch
-        </span>
-        <div class="contact-form">
-            <div class="content-wrapper">
-                <span class="email-wrapper" role="row">
-                    <i class="input-icon fa fa-envelope"></i>
-                    <input id="input-email" class="email-input" type="email" name="email" autocomplete="off" placeholder="email">
-                </span>
-                <textarea id="input-message" class="message-input" name="message-area" placeholder="message"></textarea>
-                <button class="send-message">
-                    Send message
-                </button>
+
+    <div id="pricing" class="d-block w-100">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 px-0 px-md-2">
+                    <div class="d-block form-label text-center mt-4 mb-5">
+                        <span class="pricing-title">
+                            Choose the right plan
+                        </span>
+                    </div>
+
+                    <!-- plans -->
+                    <div class="container-fluid">
+                        <div class="row gy-3 gy-md-5 gy-lg-0">
+                            <div class="col-12 col-md-6 col-lg-4 px-3 px-md-5">
+                                <!-- plan-1 -->
+                                <div class="plan p-2">
+                                    <div class="plan-fg-panel">
+                                        <span class="plan-title-wrapper">
+                                            <i class="plan-icon fa fa-rocket"></i>
+                                            <span class="plan-title">
+                                                FREEMIUM
+                                            </span>
+                                        </span>
+                                        <span class="table" role="table">
+                                            <!-- feature 0 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">8 hours admin panel</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 1 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Dashboard</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 2 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">limited to 5 car slot</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 3 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Offline tracking</span>
+                                                </span>
+                                            </span>
+                                        
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 px-3 px-md-5">
+                                <!-- plan-2 -->
+                                <div class="plan p-2">
+                                    <div class="plan-fg-panel">
+                                        <span class="plan-title-wrapper">
+                                            <i class="plan-icon fa fa-rocket"></i>
+                                            <span class="plan-title">
+                                                PRO
+                                            </span>
+                                        </span>
+                                        <span class="table" role="table">
+                                            <!-- feature 0 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">18 hours admin panel</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 1 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Dashboard</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 2 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">limited to 8 car slot</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 3 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Offline tracking</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 offset-0 offset-md-3 offset-lg-0 px-3 px-md-5">
+                                <!-- plan-3 -->
+                                <div class="plan p-2">
+                                    <div class="plan-fg-panel">
+                                        <span class="plan-title-wrapper">
+                                            <i class="plan-icon fa fa-rocket"></i>
+                                            <span class="plan-title">
+                                                BUSINESS
+                                            </span>
+                                        </span>
+                                        <span class="table" role="table">
+                                            <!-- feature 0 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">24 / 7 admin panel</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 1 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Dashboard</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 2 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Unlimited car slots</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 3 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Offline tracking</span>
+                                                </span>
+                                            </span>
+                                            <!-- feature 4 -->
+                                            <span class="row" role="row">
+                                                <span class="column cell-0" role="cell">
+                                                    <i class="feature-icon feature-yes fa fa-check-circle"></i>
+                                                </span>
+                                                <span class="column cell-1" role="cell">
+                                                    <span class="feature-desc" role="text">Early access to new features</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div id="contact" class="d-block w-100">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-label text-center mt-4 mb-5">
+                        <span class="contact-title" role="text">
+                            Get in touch
+                        </span>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-md-8 col-lg-6 offset-0 offset-md-2 offset-lg-3">
+                                <div id="contact-form" class="card shadow-sm">
+                                    <div class="card-body bg-transparent">
+                                        <div class="container-fluid">
+                                            <div class="row gy-3">
+                                                <div class="col-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text text-muted">
+                                                                <i class="fa fa-envelope"></i>
+                                                            </span>
+                                                            <input class="form-control" type="email" placeholder="email"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group">
+                                                            <textarea class="form-control" rows="6" type="email" placeholder="Message" style="resize: none;"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <span class="shadow-sm rounded-1">
+                                                        <button class="btn btn-primary w-100">SUBMIT</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="landpage-footer">
         <div class="social-link-wrapper">
             <!-- TODO: add links -->

@@ -2,7 +2,6 @@
   font-family: noto-sans;
   src: url("../assets/fonts/NotoSans-Regular.ttf");
 }
-
 @-webkit-keyframes ripple {
   0% {
     width: 0;
@@ -25,7 +24,6 @@
     width: 150%;
   }
 }
-
 @keyframes ripple {
   0% {
     width: 0;
@@ -48,20 +46,17 @@
     width: 150%;
   }
 }
-
 button, .ripple-effect {
   position: relative;
   overflow: hidden;
 }
-
 button:active::after, .ripple-effect:active::after {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-animation: ripple 0.2s ease-in;
           animation: ripple 0.2s ease-in;
   -webkit-animation-fill-mode: both;
@@ -77,8 +72,7 @@ button:active::after, .ripple-effect:active::after {
   padding: 0;
   font-family: noto-sans;
   font-size-adjust: 0.58;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -100,14 +94,12 @@ body {
   min-width: 1024px;
   min-height: 768px;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   body {
     min-width: 280px;
     min-height: 568px;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   body {
     min-width: 540px;
@@ -122,22 +114,16 @@ photo {
 }
 
 .central-wrapper {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: auto;
   height: 100%;
-  -webkit-box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .central-wrapper {
     all: initial;
@@ -146,7 +132,6 @@ photo {
     height: 100%;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   .central-wrapper {
     all: initial;
@@ -176,36 +161,31 @@ photo {
   0%, 25% {
     top: -30%;
     left: 50%;
-    -webkit-transform: translate(-50%, -30%);
-            transform: translate(-50%, -30%);
+    transform: translate(-50%, -30%);
     opacity: 0;
   }
   25%, 50% {
     top: 15%;
     left: 50%;
-    -webkit-transform: translate(-50%, -25%);
-            transform: translate(-50%, -25%);
+    transform: translate(-50%, -25%);
     opacity: 0.3;
   }
   50%, 75% {
     top: 35%;
     left: 50%;
-    -webkit-transform: translate(-50%, -35%);
-            transform: translate(-50%, -35%);
+    transform: translate(-50%, -35%);
     opacity: 0.6;
   }
   75%, 100% {
     top: 45%;
     left: 50%;
-    -webkit-transform: translate(-50%, -45%);
-            transform: translate(-50%, -45%);
+    transform: translate(-50%, -45%);
     opacity: 0.8;
   }
   100% {
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
@@ -214,56 +194,40 @@ photo {
   0%, 25% {
     top: -30%;
     left: 50%;
-    -webkit-transform: translate(-50%, -30%);
-            transform: translate(-50%, -30%);
+    transform: translate(-50%, -30%);
     opacity: 0;
   }
   25%, 50% {
     top: 15%;
     left: 50%;
-    -webkit-transform: translate(-50%, -25%);
-            transform: translate(-50%, -25%);
+    transform: translate(-50%, -25%);
     opacity: 0.3;
   }
   50%, 75% {
     top: 35%;
     left: 50%;
-    -webkit-transform: translate(-50%, -35%);
-            transform: translate(-50%, -35%);
+    transform: translate(-50%, -35%);
     opacity: 0.6;
   }
   75%, 100% {
     top: 45%;
     left: 50%;
-    -webkit-transform: translate(-50%, -45%);
-            transform: translate(-50%, -45%);
+    transform: translate(-50%, -45%);
     opacity: 0.8;
   }
   100% {
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
-
 .center-panel {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   -webkit-animation: center-panel-anim 0.4s ease-in;
           animation: center-panel-anim 0.4s ease-in;
@@ -274,29 +238,18 @@ photo {
   min-height: 522.23px;
   overflow: hidden;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 8px 12px -2px rgba(34, 31, 31, 0.2);
-          box-shadow: 0px 8px 12px -2px rgba(34, 31, 31, 0.2);
+  box-shadow: 0px 8px 12px -2px rgba(34, 31, 31, 0.2);
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .center-panel {
     display: block;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -ms-flex-wrap: initial;
-        flex-wrap: initial;
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
+    flex-direction: initial;
+    flex-wrap: initial;
+    justify-content: initial;
+    align-items: initial;
     position: initial;
     inset: 0;
-    -webkit-transform: initial !important;
-            transform: initial !important;
+    transform: initial !important;
     width: 100%;
     height: 100%;
   }
@@ -311,7 +264,6 @@ photo {
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .carousel-panel {
     position: absolute;
@@ -336,12 +288,11 @@ photo {
 
 .carousel-item {
   display: inline-block;
-  width: calc(768px / 2);
+  width: 384px;
   height: 100%;
   overflow: auto;
   white-space: initial;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .carousel-item {
     width: initial;
@@ -349,25 +300,14 @@ photo {
 }
 
 .carousel-item-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .carousel-item-content {
     display: none;
@@ -384,31 +324,21 @@ photo {
 }
 
 .signup-form-panel {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 100%;
   background-color: #FFFFFF;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .signup-form-panel {
-    position: absolute;
+    position: relative;
     inset: 0;
     width: 100%;
+    height: auto !important;
     z-index: 1;
     background-color: initial;
   }
@@ -421,7 +351,6 @@ photo {
   font-weight: bold;
   color: #1C1E21;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .signup-title {
     width: 85%;
@@ -440,7 +369,6 @@ photo {
   margin: 15px 0;
   width: 100%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .input-group {
     margin: 20px 0;
@@ -455,7 +383,6 @@ photo {
   font-weight: bold;
   color: #332525;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .input-group > .input-label {
     display: none;
@@ -470,15 +397,9 @@ photo {
 }
 
 .icon-input-group > .input-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   inset: 0;
   width: 38px;
@@ -497,11 +418,9 @@ photo {
   border-radius: 4px;
   background-color: #E8F0FE;
 }
-
 .icon-input-group > .input-field:focus {
   border: 1px solid #0069f3;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .icon-input-group > .input-field {
     border: none;
@@ -523,7 +442,6 @@ photo {
   font-size: 12px;
   color: #cc2525;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .icon-input-group > .input-validator-label {
     font-weight: bold;
@@ -542,15 +460,11 @@ photo {
   font-weight: bold;
   color: #FFFFFF;
   background-color: #42B72A;
-  -webkit-box-shadow: 0px 5px 8px -2px rgba(34, 31, 31, 0.2);
-          box-shadow: 0px 5px 8px -2px rgba(34, 31, 31, 0.2);
+  box-shadow: 0px 5px 8px -2px rgba(34, 31, 31, 0.2);
 }
-
 .signup-submit:active {
-  -webkit-box-shadow: 0px 8px 10px -2px rgba(34, 31, 31, 0.2);
-          box-shadow: 0px 8px 10px -2px rgba(34, 31, 31, 0.2);
+  box-shadow: 0px 8px 10px -2px rgba(34, 31, 31, 0.2);
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .signup-submit {
     margin: 20px 0;
@@ -559,21 +473,11 @@ photo {
 }
 
 .divider {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
   margin: 5px 0;
   width: 100%;
 }
@@ -582,7 +486,6 @@ photo {
   font-size: 15px;
   color: #332525;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .divider > .divider-label {
     color: #FFFFFF;
@@ -592,7 +495,6 @@ photo {
 .divider > .divider-separator {
   width: 45%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .divider > .divider-separator {
     padding-top: 1px !important;
@@ -611,14 +513,11 @@ photo {
   font-size: 16px;
   color: #481de2;
 }
-
 .signin-link:hover {
   text-decoration: underline;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .signin-link {
     color: #a5c02e;
   }
-}
-/*# sourceMappingURL=signup.css.map */
+}/*# sourceMappingURL=signup.css.map */

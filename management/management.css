@@ -3,7 +3,6 @@
   font-family: noto-sans;
   src: url("../assets/fonts/NotoSans-Regular.ttf");
 }
-
 @-webkit-keyframes ripple {
   0% {
     width: 0;
@@ -26,7 +25,6 @@
     width: 150%;
   }
 }
-
 @keyframes ripple {
   0% {
     width: 0;
@@ -49,20 +47,17 @@
     width: 150%;
   }
 }
-
 button, .ripple-effect {
   position: relative;
   overflow: hidden;
 }
-
 button:active::after, .ripple-effect:active::after {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-animation: ripple 0.2s ease-in;
           animation: ripple 0.2s ease-in;
   -webkit-animation-fill-mode: both;
@@ -78,8 +73,7 @@ button:active::after, .ripple-effect:active::after {
   padding: 0;
   font-family: noto-sans;
   font-size-adjust: 0.58;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -101,14 +95,12 @@ body {
   min-width: 1024px;
   min-height: 768px;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   body {
     min-width: 280px;
     min-height: 568px;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   body {
     min-width: 540px;
@@ -123,22 +115,16 @@ photo {
 }
 
 .central-wrapper {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: auto;
   height: 100%;
-  -webkit-box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .central-wrapper {
     all: initial;
@@ -147,7 +133,6 @@ photo {
     height: 100%;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   .central-wrapper {
     all: initial;
@@ -171,38 +156,21 @@ body {
 }
 
 .management-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   width: 100%;
   height: 100%;
   overflow-y: auto;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .management-content {
     display: block;
-    -webkit-box-orient: initial;
-    -webkit-box-direction: initial;
-        -ms-flex-direction: initial;
-            flex-direction: initial;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
+    flex-direction: initial;
+    align-items: initial;
+    justify-content: initial;
     margin: 0;
     width: 100%;
   }
@@ -214,7 +182,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .table-wrapper {
     margin: auto;
@@ -230,39 +197,26 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .car-table {
     position: initial;
     inset: initial;
-    -webkit-transform: initial;
-            transform: initial;
+    transform: initial;
     width: 100%;
     border: none;
-    -webkit-box-shadow: initial;
-            box-shadow: initial;
+    box-shadow: initial;
     border-radius: initial;
   }
 }
 
 .empty-car-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -280,21 +234,14 @@ body {
 }
 
 .search-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 10px;
   width: 100%;
   height: 45px;
   background-color: #27282b !important;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .search-wrapper {
     padding: 0;
@@ -306,7 +253,6 @@ body {
   position: relative;
   width: 40%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .search-bar-group {
     width: calc(100% - 35px);
@@ -326,9 +272,7 @@ body {
 
 .search-box {
   display: block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   padding: 0 5px 0 40px;
   width: 100%;
   height: 35px;
@@ -338,11 +282,9 @@ body {
   color: #FFFFFF;
   background-color: initial;
 }
-
 .search-box:focus {
   border-bottom: 2px solid #0069f3;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .search-box {
     padding: 0 0 0 40px;
@@ -357,27 +299,19 @@ body {
   border: none;
   border-radius: 4px;
   background-color: #42B72A;
-  -webkit-box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
 }
-
 .add-new-car-btn:active {
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in;
-  transition: -webkit-box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  -webkit-box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-new-car-btn {
     width: 35px;
     height: 35px;
     border-radius: 100%;
     background-color: transparent;
-    -webkit-box-shadow: initial;
-            box-shadow: initial;
+    box-shadow: initial;
   }
 }
 
@@ -391,7 +325,6 @@ body {
   font-weight: bold;
   color: #FFFFFF;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-new-car-btn > .add-car-label {
     display: none;
@@ -407,49 +340,28 @@ body {
 }
 
 .car-table-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 45px;
   background-color: #FFFFFF;
   scroll-snap-align: start;
 }
-
 .car-table-row:hover:not(.header-row) {
   border: 1px solid #b7b9b8;
 }
 
 .car-table-cell {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: calc(100% / 5);
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
   height: 100%;
 }
-
 .car-table-cell:nth-child(even) {
   background-color: #E8F0FE;
 }
@@ -492,7 +404,6 @@ body {
   width: 55%;
   height: 80%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .car-featured-photo {
     width: 100%;
@@ -513,7 +424,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: bold;
 }
 
@@ -528,14 +439,12 @@ body {
   min-width: 1024;
   min-height: 768px;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-view-overlay {
     min-width: 280px;
     min-height: 568px;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   .add-car-view-overlay {
     min-width: 540px;
@@ -551,11 +460,9 @@ body {
   height: 100%;
   z-index: 1;
 }
-
-@supports ((-webkit-filter: blur(5px)) or (filter: blur(5px))) {
+@supports (filter: blur(5px)) {
   .cv-overlay-bg {
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
+    filter: blur(5px);
   }
 }
 
@@ -567,14 +474,12 @@ body {
   height: 100%;
   z-index: 2;
 }
-
 @supports ((-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))) {
   .cv-overlay-fg {
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
   }
 }
-
 @supports not ((-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))) {
   .cv-overlay-fg {
     background-color: rgba(255, 255, 255, 0.8);
@@ -586,28 +491,23 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 680px;
   height: 680px;
   border-radius: 2px;
   overflow: hidden;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.2);
   z-index: 3;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-view-panel {
     width: 100%;
     height: 100%;
     border-radius: 0;
-    -webkit-box-shadow: initial;
-            box-shadow: initial;
+    box-shadow: initial;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   .add-car-view-panel {
     width: 90%;
@@ -628,28 +528,17 @@ body {
   color: #b7b9b8;
   background-color: #FFFFFF;
 }
-
 .close-add-car-view:hover {
-  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   color: #1C1E21;
   background-color: #E8F0FE;
 }
 
 .add-car-content-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -661,13 +550,11 @@ body {
   max-height: 90%;
   overflow-y: auto;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-content {
     max-height: 100%;
   }
 }
-
 @media screen and (min-width: 540px) and (max-width: 768px) {
   .add-car-content {
     max-height: 100%;
@@ -690,7 +577,6 @@ body {
   overflow: hidden;
   color: #1C1E21;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-content-label {
     font-size: 25px;
@@ -708,8 +594,7 @@ body {
   min-width: 120px;
   min-height: 120px;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
 }
 
 .qr-code {
@@ -717,28 +602,16 @@ body {
 }
 
 .add-car-input-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 10px 0;
   width: 100%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-input-wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -754,9 +627,8 @@ input[type=number] {
 
 .add-car-labeled-input {
   display: block;
-  width: calc(98% / 4);
+  width: 24.5%;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-labeled-input {
     width: 100%;
@@ -787,18 +659,15 @@ input[type=number] {
   border: none;
   border-bottom: 1px solid #b7b9b8;
 }
-
 .add-car-labeled-input-input:focus {
   border-bottom: 2px solid #0069f3;
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-labeled-input-input:focus {
     border: none;
     border-bottom: 2px solid #0069f3;
   }
 }
-
 @media screen and (min-width: 0px) and (max-width: 540px) {
   .add-car-labeled-input-input {
     border: none;
@@ -834,17 +703,11 @@ input[type=number] {
   text-align: center;
   border-radius: 100px;
   background-color: #42B72A;
-  -webkit-box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
 }
-
 .attach-image-group > .attach-image-on-add-subs:active {
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in;
-  transition: -webkit-box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  -webkit-box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
 }
 
 .attach-image-on-add-subs-icon {
@@ -869,15 +732,9 @@ input[type=number] {
 }
 
 .attached-images-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: row;
   position: relative;
   width: 100%;
   min-height: 102px;
@@ -892,8 +749,7 @@ input[type=number] {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -919,15 +775,9 @@ input[type=number] {
 }
 
 .control-button-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin: 10px 0;
   width: 100%;
 }
@@ -942,21 +792,14 @@ input[type=number] {
   font-weight: bold;
   color: #FFFFFF;
   background-color: #2196f3;
-  -webkit-box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
 }
-
 .add-new-car-submit:active, .delete-car-button:active {
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in;
-  transition: -webkit-box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  -webkit-box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.4);
 }
 
 .delete-car-button {
   margin: 0 10px;
   background-color: #c23232;
-}
-/*# sourceMappingURL=management.css.map */
+}/*# sourceMappingURL=management.css.map */

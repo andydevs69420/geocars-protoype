@@ -1,8 +1,10 @@
 <?php
 
-    ini_set('display_errors', 0);
-    ini_set('display_startup_errors', 0);
-    error_reporting(E_ALL);
+    /*
+        ini_set('display_errors', 0);
+        ini_set('display_startup_errors', 0);
+        error_reporting(E_ALL);
+    */
     
     try {
         if (version_compare(phpversion(), '5.4.0', '<')) {
@@ -21,9 +23,10 @@
     $UPLOAD_ONLINEPATH = "http://geocarsapp.000webhostapp.com/";
 
     $HOST = "localhost";
-    $USER = "id18289199_geocarsapp";
-    $PASS = "Zm?>-2Ay3mXA}Ixw";
-    $DB   = "id18289199_geocarsdb";
+    $USER = "andydevs69420";
+    $PASS = "andy404";
+    $DB   = "geocarsDB";
+    
 
     if (!isset($CONN)) { 
 

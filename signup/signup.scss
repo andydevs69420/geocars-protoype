@@ -165,9 +165,10 @@
     height: 100%;
     background-color: $app-white-0;
     @include onMediumDevice {
-        position: absolute;
+        position:relative;
         inset: 0;
         width: 100%;
+        height: auto !important;
         z-index: 1;
         background-color: initial;
     }

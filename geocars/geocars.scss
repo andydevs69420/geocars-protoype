@@ -75,7 +75,6 @@ $copy-rights-fg : #777777;
     margin: 0;
     padding: 0;
     font-family: noto-sans;
-    overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
@@ -83,19 +82,17 @@ $copy-rights-fg : #777777;
 }
 
 html {
-    background-color: $primary;
+    background-color: $primary !important;
 }
 
 body {
-    display: block;
-    position: relative;
     width: 100vw;
     height: 100vh;
-    min-width: 1366px;
-    min-height: 768px;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    overflow-y: auto;
+    overflow: hidden auto;
+    background-color: inherit !important;
+    
     @include onMediumDevice {
         min-width: 280px;
         min-height: 653px;
@@ -106,24 +103,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: $nav-bar-size;
-    z-index: 10000;
+#nav{
     background-color: $primary;
     &.reveal {
         box-shadow: 0px 4px 8px -4px rgba(0,0,0,0.6);
-    }
-    @include onMediumDevice {
-        display: block;
-        height: auto;
-        min-height: $nav-bar-size;
     }
 }
 
@@ -152,157 +135,13 @@ body::-webkit-scrollbar {
 }
 
 
-.nav-bar > .collapse-btn {
-    display: none;
-    @include onMediumDevice {
-        display: block;
-        position: absolute;
-        margin-top: calc( 28px - 17.5px );
-        margin-left: 10px;
-        float: left;
-        width: 35px;
-        height: 35px;
-        overflow: hidden;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        color: $collapse-icon-color;
-        background-color: $collapse-non-active;
-        box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.4);
-        &:active {
-            background-color: $collapse-active;
-            box-shadow: 0px 5px 8px -3px rgba(0,0,0,0.4);
-            &::after {
-                content: ' ';
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                border-radius: 360px;
-                background-color: $collapse-ripple;
-                animation: ripple 0.2s ease-in;
-                animation-fill-mode: forwards;
-            }
-        }
-        &.rot-0 > .collapse-icon {
-            transform: rotate(0deg);
-            transition: transform 0.2s ease-in;
-        }
-        &.rot-360 > .collapse-icon {
-            transform: rotate(360deg);
-            transition: transform 0.2s ease-in;
-        }
-       
-    }
-}
-
-
-.nav-bar > .brand-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    height: 100%;
-    min-width: 280px;
-    // background-color: yellow;
-    @include onMediumDevice {
-        width: 100%;
-        min-width: initial;
-        min-height: $nav-bar-size;
-    }
-}
-
-
-.brand-wrapper > .brand-label {
-    font-size: 25px;
-    font-weight: bold;
-    color: $brand-label-fg;
-    @include onMediumDevice {
-        font-size: 20px;
-        font-weight: initial;
-        color: $brand-label-mobile-fg;
-    }
-}
-
-
-.nav-bar > .nav-links-wrapper {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding-right: 15px;
-    width: calc(100% - 25%);
-    height: 100%;
-    min-width: calc(100% - 280px);
-    list-style-type: none;
-    text-align: right;
-    // background-color: green;
-    @include onMediumDevice {
-        display: block;
-        width: 100%;
-        height: auto;
-        min-width: initial;
-        text-align: initial;
-        &.status-hide {
-            display: none;
-        }
-        &.status-shown {
-            display: block;
-        }
-    }
-}
-
-.nav-links-wrapper > .nav-link-option {
-    display: block;
-    width: calc(35% / 4);
-    height: 100%;
-    // background-color: blue;
-    @include onMediumDevice {
-        display: block;
-        width: 100%;
-        height: $nav-bar-size;
-    }
-}
-
-.nav-link-option > .nav-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    color: $nav-link-fg;
-    border-bottom: 2px solid transparent;
-    &.active-link {
-        border-bottom: 2px solid $nav-link-active;
-        @include onMediumDevice {
-            border-bottom: 2px solid transparent;
-            color: $nav-link-active-fg;
-        }
-    }
-    @include onMediumDevice {
-        justify-content: initial;
-        padding-left: 10px;
-    }
-}
-
-.tab {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
 #home {
-    position: relative;
     padding-top: 56px;
+    height: auto !important;
     background-color: $primary;
 }
 
 #home > .background {
-    display: block;
-    width: 100%;
-    height: 100%;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -313,23 +152,10 @@ body::-webkit-scrollbar {
     }
 }
 
-.background > .wrapper {
-    display: block;
-    position: absolute;
-    top:50%;
-    left: 60%;
-    transform: translateY(-50%);
-    width: 25%;
-    height: 50%;
+.wrapper {
     overflow: hidden;
     @include onMediumDevice {
-        display: block;
-        position: relative;
-        top: unset;
-        left: unset;
-        transform: unset;
         width: 85%;
-        height: 55%;
     }
 }
 
@@ -353,12 +179,13 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.2) !important;
     @supports not (backdrop-filter: blur(6px)) {
         background-color: rgba(0,0,0,0.2);
     }
 }
 
-.wrapper-fg > .large-title {
+.wrapper .content > .large-title {
     width: 100%;
     font-size: 45px;
     font-weight: bold;
@@ -368,7 +195,7 @@ body::-webkit-scrollbar {
     }
 }
 
-.wrapper-fg > .small-description {
+.wrapper .content > .small-description {
     width: 100%;
     font-size: 16px;
     color: $home-text-fg;
@@ -378,36 +205,17 @@ body::-webkit-scrollbar {
     }
 }
 
-.wrapper-fg > .explore-btn {
+.wrapper .content > .explore-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     overflow: hidden;
-    margin: 10px 0;
-    width: 115px;
-    height: 45px;
     font-size: 16px;
-    text-decoration: none;
     color: $home-text-fg;
     background-color: $explore-btn-bg;
     border-radius: 1.4em;
     box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.4);
-    &:active {
-        box-shadow: 0px 10px 12px -6px rgba(0,0,0,0.4);
-        &::after {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            border-radius: 360px;
-            background-color: $explore-btn-ripple;
-            animation: ripple 0.1s ease-in;
-            animation-fill-mode: forwards;
-        }
-    }
+
     @include onMediumDevice {
         width: 110px;
         height: 35px;
@@ -488,15 +296,11 @@ body::-webkit-scrollbar {
     justify-content: space-evenly;
     align-items: center;
     height: auto;
-    min-height: 40%;
     // background-color: yellow;
-    @include onMediumDevice {
-        padding: 50px 0;
-    }
 }
 
 
-#about > .about-title {
+#about .about-title {
     font-family: 'Quicksand', sans-serif;
     align-items: center;
     font-size: 35px;
@@ -509,18 +313,15 @@ body::-webkit-scrollbar {
     }
 }
 
-#about > .about-description {
+#about .about-description {
     font-family: 'Quicksand', sans-serif;
-    width: 65%;
     align-items: center;
     text-align: center;
     color: $about-fg;
     font-size: 20px;
     @include onMediumDevice {
         margin: 15px 0;
-        width: 85%;
         font-size: 16px;
-        text-align: justify;
     }
 }
 
@@ -531,15 +332,15 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 50px 0;
+    padding: 25px 0;
     height: auto;
     // background-color: yellow;
 }
 
 
-#pricing > .pricing-title {
+#pricing .pricing-title {
     font-family: 'Quicksand', sans-serif;
-    margin: 25px 0;
+   
     align-items: center;
     font-size: 35px;
     text-align: center;
@@ -550,34 +351,15 @@ body::-webkit-scrollbar {
         font-size: 30px;
     }
 }
-#pricing > .plan-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 25px 0;
-    width: 90%;
-    height: auto;
-    // background-color: yellow;
-    @include onMediumDevice {
-        flex-direction: column;
-        margin: 15px 0;
-        width: 100%;
-    }
-}
 
-.plan-container > .plan {
+
+.plan {
     display: block;
-    position: relative;
-    padding-top: calc(90% / 3);
-    width: calc(60% / 3);
-    overflow: hidden;
+    width: 100%;
+    min-height: 100%;
     background-color: $secondary;
     border: 1px solid $plan-border;
-    @include onMediumDevice {
-        margin: 7.5px 0;
-        padding-top: 100%;
-        width: 85%;
-    }
+   
 }
 
 .plan > .plan-fg-panel {
@@ -585,10 +367,8 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
     // background-color: yellow;
 }
 
@@ -648,7 +428,7 @@ body::-webkit-scrollbar {
         width: 80%;
         // background-color: yellow;
     }
-    height: 100%;
+    height: auto;
     
 }
 
@@ -682,14 +462,11 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 50px 0;
+    padding: 25px 0;
     height: auto;
-    @include onMediumDevice {
-        height: 100%;
-    }
 }
 
-#contact > .contact-title {
+#contact .contact-title {
     font-family: 'Quicksand', sans-serif;
     margin: 25px 0;
     align-items: center;
@@ -703,121 +480,10 @@ body::-webkit-scrollbar {
     }
 }
 
-#contact > .contact-form {
-    display: block;
-    position: relative;
-    margin: 25px 0;
-    padding-top: 25%;
-    width: 35%;
+#contact #contact-form {
     background-color: $secondary;
-    // border: 1px solid $contact-border;
-    overflow: hidden;
-    border-radius: 4px;
-    box-shadow: 0px 6px 8px -3px rgba(0,0,0,0.2);
-    @include onMediumDevice {
-        margin: 15px 0;
-        padding-top: 120%;
-        width: 85%;
-        border-radius: 0;
-
-    }
 }
 
-.contact-form > .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // align-items: center;
-    position: absolute;
-    inset: 0;
-    padding: 0 20px;
-    width: 100%;
-    height: 100%;
-    // background-color: green;
-}
-
-
-.content-wrapper > .email-wrapper {
-    display: block;
-    position: relative;
-    margin: 7.5px 0;
-    width: 100%;
-    height: 10%;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid $input-borders-bg;
-}
-
-.email-wrapper > .input-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    width: 40px;
-    height: 100%;
-    color: $email-icon-fg;
-}
-
-.email-wrapper > .email-input {
-    display: block;
-    padding: 0 5px 0 40px;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    border: none;
-    background-color: $input-bg;
-}
-
-.content-wrapper > .message-input {
-    display: block;
-    margin: 7.5px 0;
-    padding: 0 5px;
-    width: 100%;
-    height: 50%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    resize: none;
-    border: 1px solid $input-borders-bg;
-    background-color: $input-bg;
-}
-
-
-
-.content-wrapper > .send-message {
-    display: block;
-    position: relative;
-    margin: 7.5px 0;
-    width: 50%;
-    height: 10%;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    color: $send-message-btn-fg;
-    background-color: $send-message-btn-bg;
-    box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.4);
-    &:active {
-        box-shadow: 0px 10px 12px -6px rgba(0,0,0,0.4);
-        &::after {
-            content: ' ';
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            border-radius: 360px;
-            background-color: $send-message-btn-ripple-bg;
-            animation: ripple 0.1s ease-in;
-            animation-fill-mode: forwards;
-        }
-    }
-    @include onMediumDevice {
-        width: 100%;
-        font-size: 14px;
-    }
-}
 
 .landpage-footer {
     display: flex;
